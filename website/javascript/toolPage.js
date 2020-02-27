@@ -935,6 +935,7 @@ function downloadPrompt() {
   $("#loadArea").css("display", "block");
   $("#downloadText").css("display", "block");
   $("#downloadText").val(seqVizPairsJSON);
+  $("#saveCanvasButton").css("display", "block");
 }
 
 function uploadPrompt() {
@@ -942,12 +943,14 @@ function uploadPrompt() {
   $("#hider").css("display", "block");
   $("#loadArea").css("display", "block");
   $("#uploadText").css("display", "block");
+  $("#saveCanvasButton").css("display", "none");
   $("#loadButton").css("display", "block");
 }
 
 function closePrompt() {
   $("#downloadText").css("display", "none");
   $("#uploadText").css("display", "none");
+  $("#saveCanvasButton").css("display", "none");
   $("#loadButton").css("display", "none");
   $("#loadArea").css("display", "none");
   $("#hider").css("display", "none");

@@ -94,12 +94,13 @@
   <div id="toolNavs">
   </div>
 
-  <div id="hider" onclick="closePrompt()">  
+  <div id="hider" onclick="closePrompt()">
   </div>
 
   <div id='loadArea'>
     <textarea id="uploadText"></textarea>
     <textarea id="downloadText" readonly></textarea>
+    <button id="saveCanvasButton" onclick="NScore.saveImage()"> Save Image </button>
     <button id="loadButton" onclick="loadJSON()"> Load </button>
   </div>
 
@@ -108,7 +109,7 @@
     </div>
   </div>
 
-<!-- 
+<!--
   <div id="toolConfigNav">
 
   </div> -->
@@ -123,7 +124,7 @@
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.css"
     defer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js"> </script>
-  <script src="https://cdn.jsdelivr.net/npm/jsonform@2.1.3/lib/jsonform.min.js"></script> 
+  <script src="https://cdn.jsdelivr.net/npm/jsonform@2.1.3/lib/jsonform.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
   <script src="javascript/NScore_bundle.js"></script>
   <script src="javascript/toolPage.js" defer></script>

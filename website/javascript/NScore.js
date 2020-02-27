@@ -17,7 +17,7 @@ const NScore = function () {
 	const BuiltInSeqs = SEQUENCE.BuiltInSeqs;
 	const validOEIS = VALIDOEIS;
 	var preparedSequences = []; // sequenceGenerators to be drawn
-	var preparedTools = []; // chosen drawing modules 
+	var preparedTools = []; // chosen drawing modules
 	var unprocessedSequences = []; //sequences in a saveable format
 	var unprocessedTools = []; //tools in a saveable format
 	var liveSketches = []; // p5 sketches being drawn
@@ -33,8 +33,8 @@ const NScore = function () {
 	 * @param {*} height height of sketch
 	 * @returns p5 sketch
 	 */
-	const generateP5 = function (moduleClass, config, seq, divID, width, height) {
 
+	const generateP5 = function (moduleClass, config, seq, divID, width, height) {
 		//Create canvas element here
 		var div = document.createElement('div');
 		//The style of the canvases will be "canvasClass"
@@ -133,7 +133,7 @@ const NScore = function () {
 	 * We initialize the drawing processing. First we calculate the dimensions of each sketch
 	 * then we pair up sequences and drawing modules, and finally we pass them to generateP5
 	 * which actually instantiates drawing modules and begins drawing.
-	 * 
+	 *
 	 * @param {*} seqVizPairs a list of pairs where each pair contains an ID of a sequence
 	 * and an ID of a drawing tool, this lets us know to pass which sequence to which
 	 * drawing tool.
@@ -160,6 +160,12 @@ const NScore = function () {
 				liveSketches.push(generateP5(currentTool.module.viz, currentTool.config, currentSeq, liveSketches.length, individualWidth, individualHeight));
 			}
 		}
+	};
+
+	const saveImage = function() {
+		liveSketches.forEach(function (sketch) {
+			sketch.saveCanvas("Image", "png");
+		});
 	};
 
 	const makeJSON = function (seqVizPairs) {
@@ -220,6 +226,7 @@ const NScore = function () {
 		resume: resume,
 		step: step,
 		clear: clear,
+		saveImage: saveImage,
 	};
 }();
 
